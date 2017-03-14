@@ -11,27 +11,49 @@ public class Main
 {
     public static void main( String[] args )
     {
-        BoxOverride overrideBox = new BoxOverride( "black", 5, 5 );
-        BoxOverride overrideBox2 = new BoxOverride( "black", 5, 5 );
+        HashSet<Box> hashSet = new HashSet<Box>();
+
+        Box box1 = new Box( "black", 5, 5 );
+        Box box2 = new Box( "black", 5, 5 );
+
+        // методы equals hashcode непереопределены
+        print( box1, box2 );
+
+        System.out.println( "Contains of HashSet:" );
+        hashSet.add( box1 );
+        hashSet.add( box2 );
+
+        for ( final Box box : hashSet )
+        {
+            System.out.println( box.toString() );
+        }
+
+        System.out.println();
+        box1 = new BoxOverride( "white", 5, 5 );
+        box2 = new BoxOverride( "white", 5, 5 );
 
         // методы equals hashcode переопределены
-        System.out.println("Override object:");
-        System.out.println( "hashcode blackBox: " + overrideBox.hashCode() );
-        System.out.println( "hashcode blackBox2: " + overrideBox2.hashCode() );
-        System.out.println( "equals: " + overrideBox.equals( overrideBox2 ) );
+        print( box1, box2 );
 
-        Box blackBox = new Box( "black", 5, 5 );
-        Box blackBox2 = new Box( "black", 5, 5 );
+        System.out.println( "Contains of HashSet:" );
+        hashSet.clear();
+        hashSet.add( box1 );
+        hashSet.add( box2 );
 
-        // методы equals hashcode не переопределены
-        System.out.println("Not override object:");
-        System.out.println( "hashcode blackBox: " + blackBox.hashCode() );
-        System.out.println( "hashcode blackBox2: " + blackBox2.hashCode() );
-        System.out.println( "equals: " + blackBox.equals( blackBox2 ) );
+        for ( final Box box : hashSet )
+        {
+            System.out.println( box.toString() );
+        }
+    }
 
-        HashSet<Box> hashSet = new HashSet<Box>(  );
-        hashSet.add( blackBox );
-        hashSet.add( blackBox2 );
 
+    static void print( final Box box1, final Box box2 )
+    {
+        System.out.println( "Not Override objects:" );
+        System.out.println( box1.toString() );
+        System.out.println( box2.toString() );
+        System.out.println( "hashcode notOverrideBox: " + box1.hashCode() );
+        System.out.println( "hashcode notOverrideBox2: " + box2.hashCode() );
+        System.out.println( "equals: " + box1.equals( box2 ) );
     }
 }

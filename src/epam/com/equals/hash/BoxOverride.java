@@ -4,18 +4,11 @@ package epam.com.equals.hash;
 /**
  * Created by Ermek_Abyshev on 3/14/2017.
  */
-public class BoxOverride
+public class BoxOverride extends Box
 {
-    private String name;
-    private int height;
-    private int width;
-
-
     public BoxOverride( final String name, final int height, final int width )
     {
-        this.name = name;
-        this.height = height;
-        this.width = width;
+        super( name, height, width );
     }
 
 
@@ -26,7 +19,7 @@ public class BoxOverride
         {
             return true;
         }
-        if ( o == null || getClass() != o.getClass() )
+        if ( !( o instanceof BoxOverride ) )
         {
             return false;
         }
