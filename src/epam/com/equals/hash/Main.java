@@ -1,6 +1,7 @@
 package epam.com.equals.hash;
 
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 
@@ -13,10 +14,10 @@ public class Main
     {
         HashSet<Box> hashSet = new HashSet<Box>();
 
+        // методы equals hashcode непереопределены
         Box box1 = new Box( "black", 5, 5 );
         Box box2 = new Box( "black", 5, 5 );
 
-        // методы equals hashcode непереопределены
         System.out.println( "Not Override objects:" );
         print( box1, box2 );
 
@@ -29,11 +30,18 @@ public class Main
             System.out.println( box.toString() );
         }
 
-        System.out.println();
+        // методы equals hashcode переопределены
         box1 = new BoxOverride( "white", 5, 5 );
         box2 = new BoxOverride( "white", 5, 5 );
+        Box box3 = new BoxOverride( "white", 5, 5 );
 
-        // методы equals hashcode переопределены
+        HashMap<Box,String> map = new HashMap<Box, String>(  );
+        map.put( box1, "test" );
+        map.put( box2, "test2" );
+        map.put( box3, "test2" );
+
+
+        System.out.println();
         System.out.println( "Override objects:" );
         print( box1, box2 );
 

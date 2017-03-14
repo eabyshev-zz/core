@@ -8,8 +8,15 @@ public class Main
 {
     public static void main( String[] args )
     {
+        try
+        {
+            throw new Error( "my error" );
+        }
+        catch ( Error error )
+        {
+            error.printStackTrace();
+        }
         // custom error
-        //        throw new MyError( "my error" );
 
         // handle error
         ErrorDemo demo = new ErrorDemo();
