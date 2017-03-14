@@ -19,21 +19,6 @@ public class BoxOverride
     }
 
 
-    public static void main( String[] args )
-    {
-        BoxOverride blackBox = new BoxOverride( "black", 5, 5 );
-        BoxOverride blackBox2 = new BoxOverride( "black", 5, 5 );
-
-        // методы equals hashcode не переопределены
-        System.out.println( "hashcode blackBox: " + blackBox.hashCode() );
-        System.out.println( "hashcode blackBox2: " + blackBox2.hashCode() );
-
-        System.out.println( "equals: " + blackBox.equals( blackBox2 ) );
-
-
-    }
-
-
     @Override
     public boolean equals( final Object o )
     {

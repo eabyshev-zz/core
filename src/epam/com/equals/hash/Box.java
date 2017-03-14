@@ -25,7 +25,7 @@ public class Box
     public static void main( String[] args )
     {
         Box blackBox = new Box( "black", 5, 5 );
-        Box blackBox2 = new Box( "black", 5, 6 );
+        Box blackBox2 = new Box( "black", 5, 5 );
 
         // методы equals hashcode не переопределены
         System.out.println( "hashcode blackBox: " + blackBox.hashCode() );
@@ -39,36 +39,38 @@ public class Box
     }
 
 
-    @Override
-    public boolean equals( final Object o )
-    {
-        if ( this == o )
-        {
-            return true;
-        }
-        if ( !( o instanceof Box ) )
-        {
-            return false;
-        }
-
-        final Box box = ( Box ) o;
-
-        if ( height != box.height )
-        {
-            return false;
-        }
-        if ( width != box.width )
-        {
-            return false;
-        }
-        return name.equals( box.name );
-    }
-
-
-    @Override
-    public int hashCode()
-    {
-        int result = name.hashCode();
-        return result;
-    }
+//    @Override
+//    public boolean equals( final Object o )
+//    {
+//        if ( this == o )
+//        {
+//            return true;
+//        }
+//        if ( !( o instanceof Box ) )
+//        {
+//            return false;
+//        }
+//
+//        final Box box = ( Box ) o;
+//
+//        if ( height != box.height )
+//        {
+//            return false;
+//        }
+//        if ( width != box.width )
+//        {
+//            return false;
+//        }
+//        return name.equals( box.name );
+//    }
+//
+//
+//    @Override
+//    public int hashCode()
+//    {
+//        int result = name.hashCode();
+//        result = 31 * result + height;
+//        result = 31 * result + width;
+//        return result;
+//    }
 }
