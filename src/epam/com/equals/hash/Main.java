@@ -17,6 +17,7 @@ public class Main
         Box box2 = new Box( "black", 5, 5 );
 
         // методы equals hashcode непереопределены
+        System.out.println( "Not Override objects:" );
         print( box1, box2 );
 
         System.out.println( "Contains of HashSet:" );
@@ -33,6 +34,7 @@ public class Main
         box2 = new BoxOverride( "white", 5, 5 );
 
         // методы equals hashcode переопределены
+        System.out.println( "Override objects:" );
         print( box1, box2 );
 
         System.out.println( "Contains of HashSet:" );
@@ -47,9 +49,8 @@ public class Main
     }
 
 
-    static void print( final Box box1, final Box box2 )
+    private static void print( final Box box1, final Box box2 )
     {
-        System.out.println( "Not Override objects:" );
         System.out.println( box1.toString() );
         System.out.println( box2.toString() );
         System.out.println( "hashcode notOverrideBox: " + box1.hashCode() );
