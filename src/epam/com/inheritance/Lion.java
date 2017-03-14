@@ -6,9 +6,13 @@ package epam.com.inheritance;
  */
 public class Lion extends Animal
 {
-    public Lion( final String name, final Type mammals, final int age )
+    private String pride;
+
+
+    public Lion( final String name, final Type mammals, final int age, final String pride )
     {
         super( name, mammals, age );
+        this.pride = pride;
     }
 
 
@@ -20,13 +24,26 @@ public class Lion extends Animal
 
 
     @Override
-    protected void breath()
+    protected final void breath()
     {
         System.out.println( "Lion will breath with nose" );
     }
 
+
     void roar()
     {
-        System.out.println("Lion is roar");
+        System.out.println( "Lion is roar" );
+    }
+
+
+    public String getPride()
+    {
+        return pride;
+    }
+
+
+    public void setPride( final String pride )
+    {
+        this.pride = pride;
     }
 }

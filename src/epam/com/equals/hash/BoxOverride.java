@@ -1,20 +1,17 @@
 package epam.com.equals.hash;
 
 
-import java.util.HashSet;
-
-
 /**
  * Created by Ermek_Abyshev on 3/14/2017.
  */
-public class Box
+public class BoxOverride
 {
     private String name;
     private int height;
     private int width;
 
 
-    public Box( final String name, final int height, final int width )
+    public BoxOverride( final String name, final int height, final int width )
     {
         this.name = name;
         this.height = height;
@@ -24,8 +21,8 @@ public class Box
 
     public static void main( String[] args )
     {
-        Box blackBox = new Box( "black", 5, 5 );
-        Box blackBox2 = new Box( "black", 5, 6 );
+        BoxOverride blackBox = new BoxOverride( "black", 5, 5 );
+        BoxOverride blackBox2 = new BoxOverride( "black", 5, 5 );
 
         // методы equals hashcode не переопределены
         System.out.println( "hashcode blackBox: " + blackBox.hashCode() );
@@ -33,9 +30,7 @@ public class Box
 
         System.out.println( "equals: " + blackBox.equals( blackBox2 ) );
 
-        HashSet<Box> hashSet = new HashSet<Box>(  );
-        hashSet.add( blackBox );
-        hashSet.add( blackBox2 );
+
     }
 
 
@@ -46,22 +41,22 @@ public class Box
         {
             return true;
         }
-        if ( !( o instanceof Box ) )
+        if ( o == null || getClass() != o.getClass() )
         {
             return false;
         }
 
-        final Box box = ( Box ) o;
+        final BoxOverride that = ( BoxOverride ) o;
 
-        if ( height != box.height )
+        if ( height != that.height )
         {
             return false;
         }
-        if ( width != box.width )
+        if ( width != that.width )
         {
             return false;
         }
-        return name.equals( box.name );
+        return name.equals( that.name );
     }
 
 
@@ -69,6 +64,8 @@ public class Box
     public int hashCode()
     {
         int result = name.hashCode();
+        result = 31 * result + height;
+        result = 31 * result + width;
         return result;
     }
 }
