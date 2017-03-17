@@ -35,7 +35,7 @@ public class Main
         box2 = new BoxOverride( "white", 5, 5 );
         Box box3 = new BoxOverride( "white", 5, 5 );
 
-        HashMap<Box,String> map = new HashMap<Box, String>(  );
+        HashMap<Box, String> map = new HashMap<Box, String>();
         map.put( box1, "test" );
         map.put( box2, "test2" );
         map.put( box3, "test2" );

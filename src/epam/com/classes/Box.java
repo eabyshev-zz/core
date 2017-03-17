@@ -24,15 +24,24 @@ public class Box
         this.width = width;
     }
 
+
     public void draw( final int x1, final int x2, final int y1, final int y2 )
     {
-        System.out.println("draw using coordinates: x1, x2, y1, y2 ");
+        System.out.println( "draw using coordinates: x1, x2, y1, y2 " );
     }
 
-    public void draw( final int x1, final int x2, final int y1, final int y2, boolean isFilled  )
+
+    public void draw( final int x1, final int x2, final int y1, final int y2, boolean isFilled )
     {
-        System.out.println("draw filled box.");
+        System.out.println( "draw filled box." );
     }
+
+
+    public int draw( final int x1, final int x2, final int y1 )
+    {
+        return 0;
+    }
+
 
     public String getName()
     {

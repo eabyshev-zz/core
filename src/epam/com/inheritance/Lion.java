@@ -1,6 +1,12 @@
 package epam.com.inheritance;
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+
 /**
  * Created by Ermek_Abyshev on 3/14/2017.
  */

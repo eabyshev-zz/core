@@ -6,9 +6,10 @@ package epam.com.inheritance;
  */
 public class AnimalTest
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws Exception
     {
         Lion lion = new Lion( "leo", Type.MAMMALS, 5, "africa" );
+        lion.roar();
         Fish fish = new Fish( "nemo", Type.AQUATIC, 2 );
 
         // полиморфизм, позднее связывание
