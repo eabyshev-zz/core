@@ -24,5 +24,5 @@ public class Stream {
 
         long count = values.stream().filter(new Integer(100)::equals).count();
         System.out.println(count);
-    }
+}
 }
