@@ -1,4 +1,4 @@
-package epam.com.multitheding;
+package epam.com.multitheding.waitnotify;
 
 /**
  * Created by Ermek_Abyshev on 3/16/2017.
