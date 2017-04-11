@@ -1,8 +1,12 @@
 package epam.com.generics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Ermek_Abyshev on 4/7/2017.
  */
+@Version(version = 5,value = 1)
 public class BoxPrinter {
 
     private Object val;
@@ -44,5 +48,17 @@ public class BoxPrinter {
         System.out.println(i+a);
 
         value1.getVal();
+
+        List rawList = new ArrayList();
+        List<String> list = new ArrayList<>();
+        rawList=list;
+        list=rawList; // warning
+        rawList.add(8);
+        rawList.add("test");
+
+        String s = list.get(0);
+
+        rawList.stream().forEach(System.out::println);
+
     }
 }
